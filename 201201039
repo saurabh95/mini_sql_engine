@@ -1,0 +1,2 @@
+g++ -std=c++0x code.cpp
+./a.out "$1"
