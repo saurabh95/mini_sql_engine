@@ -12,6 +12,8 @@ struct full_db{
     db_ref meta;
 };
 
+
+
 struct full_query{
     vector < string > columns;
     vector < string > tables;
@@ -22,7 +24,7 @@ struct full_query{
 
 struct full_miner{
     int n;          //number of tables
-    dbms data;  
+    dbms data;
     map < string , int > m;     //map of tablename.columnname to index
     vector < string > table;    // list of tables
     vector < int > size;
@@ -590,7 +592,7 @@ struct full_db* getMetaData()
     db_ref temp_meta;
     int col_number;
     int flag=1;
-    while(meta>>token) 
+    while(meta>>token)
     {
         if(flag==0)
         {
@@ -724,7 +726,7 @@ struct full_query* check_error(struct full_query* query, struct full_db* db)
             }
         }
     }
-    // Check if tables mentioned in from part exist 
+    // Check if tables mentioned in from part exist
     for(it1 = (query->tables).begin();it1!=(query->tables).end();it1++)
     {
         if((db->meta).find(*it1) == (db->meta).end())
